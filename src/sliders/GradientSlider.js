@@ -11,7 +11,8 @@ const GradientSlider = ({
   maximumValue,
   gradient,
   onValueChange,
-  thumbTintColor
+  thumbTintColor,
+  trackClickable
 }) => {
   return (
     <View style={[styles.container, style]}>
@@ -27,6 +28,7 @@ const GradientSlider = ({
         minimumTrackTintColor="transparent"
         maximumTrackTintColor="transparent"
         thumbStyle={[styles.thumb, { backgroundColor: thumbTintColor }]}
+        trackClickable={trackClickable}
       />
     </View>
   );
