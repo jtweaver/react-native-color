@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const Gradient = ({ style, gradientSteps, maximumValue, getStepColor }) => {
   const rows = [];
-  for (let i = 0; i <= gradientSteps; i++) {
+  for (let i = -1; i <= gradientSteps; i++) {
     rows.push(
       <View
         key={i}

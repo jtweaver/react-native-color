@@ -5,7 +5,17 @@ import tinycolor from 'tinycolor2';
 import Gradient from './Gradient';
 
 class HueGradient extends PureComponent {
-  getStepColor = i => tinycolor({ s: 1, l: 0.5, h: i }).toHslString();
+  getStepColor = i => {
+    console.log(i);
+    if (i < 0) {
+      return tinycolor({ s: 0, l: 0, h: 0 }).toHslString();
+    }
+    if (i > 359) {
+      return tinycolor({ s: 1, l: 1, h: 0 }).toHslString();
+    }
+
+    return tinycolor({ s: 1, l: 0.5, h: i }).toHslString();
+  }
 
   render() {
     const { style, gradientSteps } = this.props;
@@ -14,7 +24,7 @@ class HueGradient extends PureComponent {
         style={style}
         gradientSteps={gradientSteps}
         getStepColor={this.getStepColor}
-        maximumValue={359}
+        maximumValue={364}
       />
     );
   }

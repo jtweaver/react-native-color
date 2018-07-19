@@ -24,6 +24,7 @@ const GradientSlider = ({
         animateTransitions
         animationType="spring"
         thumbTouchSize={{ width: 48, height: 48 }}
+        minimumValue={-5}
         maximumValue={maximumValue}
         onValueChange={onValueChange}
         minimumTrackTintColor="transparent"
